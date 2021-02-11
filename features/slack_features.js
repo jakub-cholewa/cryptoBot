@@ -3,20 +3,12 @@
  * Licensed under the MIT License.
  */
 
-
 const {BotkitConversation} = require("botkit");
-
-const { SlackDialog } = require('botbuilder-adapter-slack');
-
 const csv = require('csv-parser');
 const fs = require('fs')
 
 currencies = []
 predictions = []
-
-successWrapper = ''
-
-
 
 function getCurrencies() {
     fs.createReadStream('D:\\skryptowe\\Scraper2\\currencies.csv')
@@ -246,6 +238,4 @@ module.exports = async function (controller) {
         await bot.reply(message, 'Nie zrozumiałem Cię.\n' +
             'Wpisz !help aby uzyskać pomoc.');
     });
-
-
 }
